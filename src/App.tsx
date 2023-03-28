@@ -7,12 +7,11 @@ import Login from './pages/Login';
 function App() {
   return (
     <>
-    <Login />
-    {/* <Search />
+      <Login />
+      {/* <Search />
     <MovieDetail />  */}
     </>
-  )
+  );
 }
 
-export default App
- 
+export default App;
