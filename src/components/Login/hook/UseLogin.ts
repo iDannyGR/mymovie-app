@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import LoginValidationSchema from '@/models/validation/Login.validation.js';
-
+// import { loginRequest } from '@/api/auth'
 export const useLogin = () => {
 
   const validateUser = useFormik({
@@ -9,10 +9,12 @@ export const useLogin = () => {
     password: ''
   },
   validationSchema: LoginValidationSchema,
-  onSubmit: ( values )=> console.log( values ),
+  onSubmit: values =>{
+     console.log(values)
+  } ,
 });
 
 return validateUser
 }
 
-
+// e: React.FormEvent<HTMLElement>
