@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Login as Loginform } from '../components/Login';
+import { Login as Loginform } from '@/components/Login';
 
 const Login = (): ReactElement => {
   return (

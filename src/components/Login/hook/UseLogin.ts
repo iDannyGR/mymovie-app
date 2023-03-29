@@ -1,16 +1,18 @@
 import { useFormik } from 'formik';
-import LoginValidationSchema from '../../../models/validation/Login.validation.js';
-import { InferType } from 'yup';
+import LoginValidationSchema from '@/models/validation/Login.validation.js';
 
-const loginData = (values) => {
-    console.log(values);
-}
+export const useLogin = () => {
 
-export const Formik = useFormik({
+  const validateUser = useFormik({
   initialValues: {
     email: '',
     password: ''
   },
-  onSubmit: loginData,
-  validationSchema: LoginValidationSchema
+  validationSchema: LoginValidationSchema,
+  onSubmit: ( values )=> console.log( values ),
 });
+
+return validateUser
+}
+
+
