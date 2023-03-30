@@ -1,16 +1,14 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 // import { authStore } from '@/store/authStore';
 
-type tokenData ={
-  token:
-}
-export const loginRequest: Promise<AxiosResponse> = async (email, password) =>{
-  return  await axios.post('https://reqres.in/api/login', {
+export const loginRequest = async (email:string, password:string) => {
+const response = await axios.post('https://reqres.in/api/login', {
     email,
     password
-  });
-
-} 
+  })
+const { data:{token}, status } = response;
+return {token, status}
+}
 
 
 

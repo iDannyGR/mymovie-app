@@ -2,20 +2,26 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware'
 
 interface State{
-    token: string
+    token: string,
+    email:string
 }
 
 interface Actions {
-    setToken: ( token : string ) => void
+    setToken: ( token:State['token'], email:State['email'] ) => void,
+    deleteToken: () => void
 }
 
-export const authStore = create(persist<State & Actions>(
+export const authStore = create(
+  persist<State & Actions>(
     (set) => ({
-        token: '',
-        setToken: (token: string) => set((state) => ({
-        token
-      }))
-  }), {
-    name: 'token'
-}
-));
+      token: '',
+      email: '',
+      setToken: (token, email) => set({token,email}),
+      deleteToken: () => set({ token: '' })
+    }),
+    { name: 'token' }
+  )
+);
+    
+
+    

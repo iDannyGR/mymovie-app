@@ -1,12 +1,11 @@
 import { useFormik } from 'formik';
 import LoginValidationSchema from '@/models/validation/Login.validation.js';
 import { loginRequest } from '@/api/auth'
+import {  authStore } from '@/store/authStore'
+
 export const useLogin = () => {
 
-  type authData = {
-    email: string;
-    password: string;
-  };
+  const setState = authStore((state) => state.setToken);
 
   const validateUser = useFormik({
   initialValues: {
@@ -15,9 +14,11 @@ export const useLogin = () => {
   },
   validationSchema: LoginValidationSchema,
   onSubmit: async values => {
-   const {email, password}:authData = values;
-   const response = await loginRequest(email, password);
-   console.log(response.status);
+   
+   const { email, password } = values;
+   const { token, status } = await loginRequest(email, password); 
+
+   status === 200 ? setState(token, email) : console.log('data error')
   }
 });
 
