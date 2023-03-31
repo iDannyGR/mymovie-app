@@ -1,6 +1,10 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 
-const Error404 = (): ReactElement => (
+
+const Error404 = (): ReactElement => 
+
+(
   <div
     className="
       flex
@@ -25,9 +29,9 @@ const Error404 = (): ReactElement => (
           The page you’re looking for doesn’t exist.
         </p>
 
-        <a href="#" className="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100">
+        <Link to={'./home'} className="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100">
           Go home
-        </a>
+        </Link>
       </div>
     </div>
   </div>

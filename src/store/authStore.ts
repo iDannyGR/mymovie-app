@@ -3,7 +3,8 @@ import { persist } from 'zustand/middleware'
 
 interface State{
     token: string,
-    email:string
+    email:string,
+    itAuth: boolean
 }
 
 interface Actions {
@@ -16,7 +17,8 @@ export const authStore = create(
     (set) => ({
       token: '',
       email: '',
-      setToken: (token, email) => set({token,email}),
+      itAuth: false,
+      setToken: (token, email) => set({token,email, itAuth: true}),
       deleteToken: () => set({ token: '' })
     }),
     { name: 'token' }

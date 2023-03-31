@@ -5,9 +5,9 @@ const UrlApi: Array<string> = [
    "https://api.themoviedb.org/3/",
    "https://reqres.in/api"];
 
-const getData = (url:string, api_key?:string) => {
+const getData = (baseURL:string, api_key?:string) => {
     return axios.create({
-        url,
+        baseURL,
     params: {
     api_key 
   }
