@@ -1,11 +1,12 @@
-import axios from 'axios';
-// import { authStore } from '@/store/authStore';
+import { UrlApi, getData} from '@/libs/axios'
 
+const  get = getData(UrlApi[1]);
+console.log(get)
 export const loginRequest = async (email:string, password:string) => {
-const response = await axios.post('https://reqres.in/api/login', {
-    email,
-    password
-  })
+  const response = await get.post('/login',{
+      email, password
+    })
+console.log(response)
 const { data:{token}, status } = response;
 return {token, status}
 }
