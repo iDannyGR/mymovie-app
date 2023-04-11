@@ -2,7 +2,7 @@ import { ReactElement, useEffect, useState } from 'react'
 
 import { Search } from '@/components/Search'
 import { getMovies } from '@/api/getMovie';
-import { MovieDetail } from '@/components/MovieDetail';
+import { MovieGeneral } from '@/components/MovieGeneral';
 import { MovieResult } from '@/models/MovieResult';
 
 
@@ -25,10 +25,12 @@ const Home = ():ReactElement => {
     data();
   }, []);
 return (
-  <>
+  <div className='m-4'>
     <Search />
-    { movies.results.map(movie =>  <MovieDetail movie={movie} key={movie.id} />)}
-  </>
+    {movies.results.map((movie) => (
+      <MovieGeneral movie={movie} key={movie.id} />
+    ))}
+  </div>
 );
 }
 

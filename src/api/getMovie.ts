@@ -1,5 +1,4 @@
 import { UrlApi, getData } from '@/libs/axios';
-import { MovieResult } from '@/models/MovieResult'
 
 const API = 'c378e61dad694db6110bd4e337a3fbeb';
 

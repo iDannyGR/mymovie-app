@@ -7,7 +7,7 @@ interface Props {
   movie:Results
 }
 
-const movieDetail:FC<Props> = ({movie}): ReactElement => {
+const MovieGeneral:FC<Props> = ({movie}): ReactElement => {
   return (
     <div className="relative shadow-lg shadow-slate-600 rounded-2xl mb-4">
       <img
@@ -28,4 +28,4 @@ const movieDetail:FC<Props> = ({movie}): ReactElement => {
   );
  }
 
-export default movieDetail;
+export default MovieGeneral;
