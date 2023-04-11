@@ -1,15 +1,18 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware'
+import { Results } from '@/models/Results'
 
 interface State{
     token: string,
     email:string,
-    itAuth: boolean
+    itAuth: boolean,
+    favoriteMovie?: Results[]
 }
 
 interface Actions {
-    setToken: ( token:State['token'], email:State['email'] ) => void,
-    deleteToken: () => void
+  setToken: (token: State['token'], email: State['email']) => void;
+  deleteToken: () => void;
+  setFavoriteMovie: (movie:Results)=>void;
 }
 
 export const authStore = create(
@@ -18,8 +21,10 @@ export const authStore = create(
       token: '',
       email: '',
       itAuth: false,
-      setToken: (token, email) => set({token,email, itAuth: true}),
-      deleteToken: () => set({ token: '' })
+      favoriteMovies: [],
+      setToken: (token, email) => set({token,email, itAuth: true, favoriteMovie:[]}),
+      deleteToken: () => set({ token: '' }),
+      setFavoriteMovie: (movie) => set({ favoriteMovies: [...favoriteMovies, movie] }),
     }),
     { name: 'token' }
   )

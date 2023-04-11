@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { Navigate } from "react-router-dom";
 import './assets/index.css';
 import  Login   from '@/pages/Login';
 import  Home  from './pages/Home';
@@ -16,7 +16,7 @@ const itAuth = authStore((state) => state.itAuth);
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={!itAuth ? <Login /> : <Navigate to={'home'}/> } />
           <Route
             path="home"
             element={

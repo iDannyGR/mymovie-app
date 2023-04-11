@@ -1,17 +1,16 @@
-export enum Input {
+enum Input {
     TEXT="text",
-    BUTTON="button",
-    DATE="date",
-    DATETIME="datetime-local",
     EMAIL="email",
     IMAGE="image",
-    NUMBER="number",
     PASSWORD="password",
-    SEARCH="search",
-    SUBMIT="submit",
 }
 
+enum ButtonType{
+    BUTTON ="button",
+    SUBMIT="submit"
+}
 
+export {Input, ButtonType}
 
 // nameId, label, inputType (este es un enum), 
 // value, placeholder, children (opcional), 
