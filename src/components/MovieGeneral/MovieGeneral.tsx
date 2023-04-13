@@ -1,5 +1,7 @@
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, useState } from 'react';
 import { Results } from '@/models/Results';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const IMG: string = 'https://image.tmdb.org/t/p/w300';
 
@@ -8,6 +10,9 @@ interface Props {
 }
 
 const MovieGeneral:FC<Props> = ({movie}): ReactElement => {
+    
+  const [liked, setLiked] = useState<boolean>(false);
+
   return (
     <div className="relative shadow-lg shadow-slate-600 rounded-2xl mb-4">
       <img
@@ -20,8 +25,16 @@ const MovieGeneral:FC<Props> = ({movie}): ReactElement => {
         <p className="hidden mt-4 text-justify">{movie.overview}</p>
         <div className="absolute flex justify-center items-center rounded-full w-16 h-16 right-1 bottom-1 border-b-4">
           <p className="rounded-full flex justify-center items-center  bg-white w-12 h-12 text-black font-extrabold">
-            <span>{ movie.vote_average.toFixed(1)}</span>
+            <span>{movie.vote_average.toFixed(1)}</span>
           </p>
+        </div>
+        <div
+          className="absolute right-4 bottom-16 drop-shadow-2xl shadow-red-600"
+          onClick={() => {
+            setLiked(!liked);
+          }}
+        >
+          {liked ? <FavoriteIcon fontSize="large" /> : <FavoriteBorderIcon fontSize='large'/>}
         </div>
       </div>
     </div>
