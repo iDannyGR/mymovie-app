@@ -4,12 +4,13 @@ import { loginRequest } from '@/api/auth';
 import {  authStore } from '@/store/authStore';
 import { useNavigate } from 'react-router-dom';
 
+
 export const useLogin = () => {
 
   const setState = authStore((state) => state.setToken);
    const navigate = useNavigate()
 
-  const { handleSubmit, handleBlur, handleChange, errors, touched } = useFormik({
+  const loginDta = useFormik({
     initialValues: {
       email: '',
       password: ''
@@ -25,7 +26,7 @@ export const useLogin = () => {
     }
   });
 
-return { handleSubmit, handleBlur, handleChange, errors, touched };
+return { loginDta };
 }
 
 // e: React.FormEvent<HTMLElement>
