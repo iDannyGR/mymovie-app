@@ -4,7 +4,7 @@ import { useLogin } from './hook/UseLogin';
 
 const Login = () => {
 
- const { handleSubmit, handleBlur, handleChange, errors, touched } = useLogin();
+ const { handleSubmit, handleBlur, handleChange, errors, touched, values } = useLogin();
 
    return (
      <div className="z-50 flex flex-col h-[100vh] w-full items-center justify-center">
@@ -15,6 +15,7 @@ const Login = () => {
          <input
            className="flex items-center h-12 px-4 w-64 mt-2 mb-7 rounded border shadow-lg border-blue-900 focus:outline-none focus:ring-2"
            type="text"
+           value={values.email}
            name="email"
            onChange={handleChange}
            onBlur={handleBlur}
@@ -25,6 +26,7 @@ const Login = () => {
          <input
            className="flex items-center h-12 px-4 w-64 mt-2 mb-7 rounded border shadow-lg border-blue-900 focus:outline-none focus:ring-2"
            type="password"
+           value={values.password}
            name="password"
            onChange={handleChange}
            aria-required

@@ -1,7 +1,15 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
+import { Movies } from '@/store/movieStore';
 
 
 const Search = (): ReactElement => {
+  
+    const setSearch = (e)=>{
+     const dta = Movies((state) => state.searchMovie());
+     const result = 
+     console.log(dta);
+    }
+
   return (
     <div className="flex items-center mb-6">
       <div className="relative w-full">
@@ -25,6 +33,7 @@ const Search = (): ReactElement => {
           id="search"
           className="shadow-lg rounded-2xl h-14 border w-full bg-gray-50 text-gray-900 text-sm pl-10 p-2.5 focus:outline-green-700 "
           placeholder="Search"
+          onChange={(e)=> setSearch(e)}
           required
         />
       </div>

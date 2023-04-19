@@ -26,7 +26,7 @@ export const authStore = create(
       deleteToken: () => set({ token: '' }),
       setFavoriteMovies: (
         movie // Corregido a favoriteMovie (singular)
-      ) => set({ favoriteMovies: [...favoriteMovies, movie] }) // Corregido a favoriteMovie (singular)
+      ) => set({ favoriteMovies: [movie, ...state.favoriteMovies] }) // Corregido a favoriteMovie (singular)
     }),
     { name: 'token' }
   )

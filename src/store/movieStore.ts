@@ -6,10 +6,12 @@ interface State {
 }
 interface Actions {
     setMovies : (movies:Results[]) => void
+    searchMovie : (search:string) => Results[]
 }
 
 export const Movies = create<State & Actions>((set) => ({
   allMovies: [],
-  setMovies: (movies) => set({ allMovies: movies })
+  setMovies: (movies) => set({ allMovies: movies }),
+  searchMovie: (search) => allMovies.filter((item:Results) => item.title.includes(search))
 }));
     

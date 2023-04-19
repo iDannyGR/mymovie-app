@@ -18,10 +18,11 @@ const Home = ():ReactElement => {
       console.log('error')
       };
     data();
-  }, []);
+  }, [allMovies]);
+
 return (
   <div className="m-4">
-    <Search />\
+    <Search />
     {allMovies.map((movie) => (
       <MovieGeneral movie={movie} key={movie.id} />
     ))}
