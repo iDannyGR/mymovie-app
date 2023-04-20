@@ -13,6 +13,7 @@ interface Actions {
   setToken: (token: State['token'], email: State['email']) => void;
   deleteToken: () => void;
   setFavoriteMovies: (movie:Results)=>void;
+  deleteFavoriteMovie: (id:Results["id"])=>void;
 }
 
 export const authStore = create(
@@ -24,9 +25,8 @@ export const authStore = create(
       favoriteMovies: [],
       setToken: (token, email) => set({ token, email, itAuth: true }),
       deleteToken: () => set({ token: '' }),
-      setFavoriteMovies: (
-        movie // Corregido a favoriteMovie (singular)
-      ) => set({ favoriteMovies: [movie, ...state.favoriteMovies] }) // Corregido a favoriteMovie (singular)
+      setFavoriteMovies: movie => set(state =>({ favoriteMovies: [movie, ...state.favoriteMovies] })) ,
+      deleteFavoriteMovie: id => set(state =>({ favoriteMovies : state.favoriteMovies.filter(movie => movie.id !== id) })),
     }),
     { name: 'token' }
   )
