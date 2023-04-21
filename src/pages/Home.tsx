@@ -2,7 +2,7 @@ import { ReactElement, useEffect } from 'react';
 import { Movies } from '@/store/movieStore'
 
 import { Search } from '@/components/Search'
-import { getMovies } from '@/api/getMovie';
+import { generalMovie } from '@/api/getMovie';
 import { MovieGeneral } from '@/components/MovieGeneral';
 
 const Home = ():ReactElement => {
@@ -12,7 +12,7 @@ const Home = ():ReactElement => {
 
   useEffect(() => {
     const data = async () => {
-      const allMovies = await getMovies();
+      const allMovies = await generalMovie();
       allMovies.status === 200 ?
       setMovies(allMovies.data.results):
       console.log('error')

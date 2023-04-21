@@ -5,11 +5,14 @@ const UrlApi: Array<string> = [
    "https://api.themoviedb.org/3/",
    "https://reqres.in/api"];
 
-const getData = (baseURL:string, api_key?:string) => {
+
+
+const getData =  (baseURL:string, api_key?:string, query?:string) => {
     return axios.create({
         baseURL,
     params: {
-    api_key 
+    api_key,
+    query 
   }
 })
 };
