@@ -13,10 +13,8 @@ const Home = ():ReactElement => {
   useEffect(() => {
     const data = async () => {
       const allMovies = await generalMovie();
-      allMovies.status === 200 ?
-      setMovies(allMovies.data.results):
-      console.log('error')
-      };
+      allMovies.status === 200 ? setMovies(allMovies.data.results) : console.log('error');
+    };
     data();
   }, [allMovies]);
 

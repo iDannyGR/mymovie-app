@@ -1,14 +1,20 @@
-import { ReactElement } from 'react';
+import { ReactElement,useEffect } from 'react';
 import { Movies } from '@/store/movieStore';
+import { searchMovies } from '@/api/getMovie'
 
 
 const Search = (): ReactElement => {
   
-    const setSearch = (e)=>{
-     const dta = Movies((state) => state.searchMovie());
-     const result = 
-     console.log(dta);
-    }
+  const dtaSearch = Movies((state) => state.setMovies);
+  
+  useEffect(() => {
+  const setSearch = async (e) => {
+    const search = await searchMovies(e.target.value);
+    dtaSearch(search.data.results);
+  };
+  }, [])
+  
+    
 
   return (
     <div className="flex items-center mb-6">
