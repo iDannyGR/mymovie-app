@@ -1,18 +1,13 @@
-import { ReactElement,useEffect } from 'react';
-import { Movies } from '@/store/movieStore';
-import { searchMovies } from '@/api/getMovie'
+import { ReactElement } from 'react';
 
 
 const Search = (): ReactElement => {
   
-  const dtaSearch = Movies((state) => state.setMovies);
   
-  useEffect(() => {
   const setSearch = async (e) => {
-    const search = await searchMovies(e.target.value);
-    dtaSearch(search.data.results);
+    console.log(e.target.value);
   };
-  }, [])
+  
   
     
 
