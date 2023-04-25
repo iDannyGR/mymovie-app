@@ -1,15 +1,12 @@
+import { useSearch } from '@/hook/useSearch';
 import { ReactElement } from 'react';
 
 
 const Search = (): ReactElement => {
+
+  const { setSearch } = useSearch();
   
-  
-  const setSearch = async (e) => {
-    console.log(e.target.value);
-  };
-  
-  
-    
+  const Search = async e => setSearch(e.target.value) ;
 
   return (
     <div className="flex items-center mb-6">
@@ -34,7 +31,7 @@ const Search = (): ReactElement => {
           id="search"
           className="shadow-lg rounded-2xl h-14 border w-full bg-gray-50 text-gray-900 text-sm pl-10 p-2.5 focus:outline-green-700 "
           placeholder="Search"
-          onChange={(e)=> setSearch(e)}
+          onChange={(e)=> Search(e)}
           required
         />
       </div>

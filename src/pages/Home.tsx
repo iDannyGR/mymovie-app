@@ -1,12 +1,10 @@
 import { ReactElement } from 'react';
-import { Movies } from '@/store/movieStore'
 import { MovieGeneral } from '@/components/MovieGeneral';
-import { Search } from '@/components/Search'
+import { Search } from '@/components/Search';
+import { Movies } from '@/store/movieStore'
 
 const Home = ():ReactElement => {
-    
-  const allMovies = Movies((state) => state.allMovies);
-
+const allMovies = Movies((state) => state.allMovies);
 
 return (
   <div className="m-4">
