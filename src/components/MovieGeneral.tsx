@@ -1,7 +1,8 @@
-import { FC, ReactElement, useState } from 'react';
+import React from 'react';
 import { Results } from '@/models/Results';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Link } from 'react-router-dom';
 
 const IMG: string = 'https://image.tmdb.org/t/p/w300';
 
@@ -9,17 +10,20 @@ interface Props {
   movie:Results
 }
 
-const MovieGeneral:FC<Props> = ({movie}): ReactElement => {
+const MovieGeneral:React.FC<Props> = ({movie}): React.ReactElement => {
     
-  const [liked, setLiked] = useState<boolean>(false);
+  const [liked, setLiked] = React.useState<boolean>(false);
 
   return (
-    <div className="relative shadow-lg shadow-slate-600 rounded-2xl mb-4">
+  
+    <div className="relative shadow-lg shadow-slate-600 rounded-2xl mb-4 top-20">
+      <Link to={`/movie/${movie.id}`} >
       <img
         className="object-cover h-72 w-full rounded-2xl"
         src={`${IMG}${movie.poster_path}`}
         alt={movie.title}
       />
+      </Link>
       <div className=" text-white w-full">
         <h5 className="absolute font-bold text-3xl text-center top-4 left-3">{movie.title}</h5>
         <p className="hidden mt-4 text-justify">{movie.overview}</p>

@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navigate } from "react-router-dom";
-import './assets/index.css';
-import  Login   from '@/pages/Login';
-import  Home  from './pages/Home';
-import  { Error404 }  from '@/components/Error404';
 import { authStore } from '@/store/authStore';
-import { IsAuth } from './components/IsAuth';
+import IsAuth from './components/IsAuth';
+import './assets/index.css';
+import Login from '@/pages/Login';
+import Home  from './pages/Home';
+import Movie  from './pages/Movie';
+import Error404 from '@/components/Error404';
 
 
 function App() {
@@ -25,7 +26,8 @@ const itAuth = authStore((state) => state.itAuth);
               </IsAuth>
             }
           />
-          <Route path="*" element={<Error404 />} />
+          <Route path='/movie/:id' element={<Movie />} />
+          <Route path="*" element={ <Error404 /> } />
         </Routes>
       </BrowserRouter>
     </>

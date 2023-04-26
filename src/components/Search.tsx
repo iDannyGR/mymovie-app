@@ -1,15 +1,15 @@
 import { useSearch } from '@/hook/useSearch';
-import { ReactElement } from 'react';
+import React from 'react';
 
 
-const Search = (): ReactElement => {
+const Search = (): React.ReactElement => {
 
   const { setSearch } = useSearch();
   
   const Search = async e => setSearch(e.target.value) ;
 
   return (
-    <div className="flex items-center mb-6">
+    <div className="fixed z-20 w-96 top-4 flex items-center mb-6">
       <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg

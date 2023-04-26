@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
-import { MovieGeneral } from '@/components/MovieGeneral';
-import { Search } from '@/components/Search';
+import React from 'react';
 import { Movies } from '@/store/movieStore'
+import  MovieGeneral  from '@/components/MovieGeneral';
+import  Search  from '@/components/Search';
 
-const Home = ():ReactElement => {
+const Home = ():React.ReactElement => {
 const allMovies = Movies((state) => state.allMovies);
 
 return (

@@ -2,7 +2,7 @@ import React from 'react';
 import userLogo from '@/assets/img/user.svg';
 import { useLogin } from './hook/UseLogin';
 
-const Login = () => {
+const LoginForm = () => {
 
  const { handleSubmit, handleBlur, handleChange, errors, touched, values } = useLogin();
 
@@ -45,7 +45,7 @@ const Login = () => {
    );
 };
 
-export default Login;
+export default LoginForm;
 
 
 
