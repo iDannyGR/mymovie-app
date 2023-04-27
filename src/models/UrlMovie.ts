@@ -5,3 +5,6 @@ export enum moviesURL {
   relatedMovie = 'discover/movie'
 }
 
+export enum URLIMG {
+  URL = 'https://image.tmdb.org/t/p/w300'
+}

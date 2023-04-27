@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
   
 type id ={
-  id:string
+  id:string 
 }
 
 const Movie = () => {
@@ -12,7 +12,7 @@ const Movie = () => {
 
     return (
       <div>
-        <MovieDetail id={ id }/>
+        <MovieDetail id={ id ?? "0" }/>
       </div>
     );
 }
