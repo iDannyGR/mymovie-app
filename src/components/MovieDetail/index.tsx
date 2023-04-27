@@ -24,11 +24,11 @@ const MovieDetail:React.FC<id> = ({id}):React.ReactElement => {
       <img
         src={`${URLIMG.URLXL}${movie.backdrop_path}`}
         alt=""
-        className="-z-0 w-full h-[400px] object-cover"
-        />
-        <p className='absolute top-1 w-10 h-10 bg-black text-white'>{movie.vote_average}</p>
-      <div className="relative z-20 flex flex-col h-[400px] items-center -top-7">
-        <h3 className="bg-white w-[95%] h-14 font-semibold text-2xl rounded-lg shadow-md shadow-lime-400 leading-loose text-center">
+        className="-z-0 w-full h-[400px] object-cover shadow-xl rounded-b-3xl"
+      />
+      <p className="absolute top-0 right-0 w-16 h-10 bg-black text-white">{movie.vote_average}</p>
+      <div className="relative z-20 flex flex-col h-[400px] items-center mt-5">
+        <h3 className="font-semibold text-2xl text-center">
           {movie.title}
         </h3>
         <p>Release Date: {movie.release_date}</p>
