@@ -6,5 +6,6 @@ export enum moviesURL {
 }
 
 export enum URLIMG {
-  URL = 'https://image.tmdb.org/t/p/w300'
+  URL = 'https://image.tmdb.org/t/p/w300',
+  URLXL = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2'
 }
