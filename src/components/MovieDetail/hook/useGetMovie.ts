@@ -28,7 +28,7 @@ React.useEffect(() => {
     status === 200 ? setMovie(data) : console.log('error');
   };
   data();
-}, [id]);
+}, [movie]);
 
 return { movie };
 }

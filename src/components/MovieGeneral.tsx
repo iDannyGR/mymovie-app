@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Results } from '@/models/Results';
 import { URLIMG } from '@/models/UrlMovie';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { HeartIcon } from '@heroicons/react';
 
 
 
@@ -38,7 +37,7 @@ const MovieGeneral:React.FC<Props> = ({movie}): React.ReactElement => {
             setLiked(!liked);
           }}
         >
-          {liked ? <FavoriteIcon fontSize="large" /> : <FavoriteBorderIcon fontSize="large" />}
+          {liked ? <HeartIcon /> : <HeartIcon className="text-red-500" />}
         </div>
       </div>
     </div>

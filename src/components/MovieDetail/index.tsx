@@ -12,14 +12,14 @@ const MovieDetail:React.FC<id> = ({id}):React.ReactElement => {
 
   return (
     <div className="w-full h-[100vh]">
+      <p className="z-20 absolute w-36 h-7 top-6 -right-8 bg-white text-lg font-extrabold text-center rotate-45 shadow-inner shadow-black">
+        {movie.vote_average.toFixed(1)}
+      </p>
       <img
         src={`${URLIMG.URLXL}${movie.backdrop_path}`}
         alt=""
         className="-z-0 w-full h-[400px] object-cover shadow-xl rounded-b-3xl"
       />
-      <p className="border absolute w-36 h-7 top-5 -right-11 bg-white text-lg font-extrabold text-center rotate-45">
-        {movie.vote_average.toFixed(1)}
-      </p>
       <div className="relative z-20 flex flex-col h-[400px] items-center mt-5">
         <h3 className="font-semibold text-2xl text-center">{movie.title}</h3>
         <p>Release Date: {movie.release_date}</p>
