@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Results } from '@/models/Results';
 import { URLIMG } from '@/models/UrlMovie';
-import { HeartIcon } from '@heroicons/react';
+import HeartIcon  from '@heroicons/react/20/solid/HeartIcon';
 
 
 
@@ -37,7 +37,7 @@ const MovieGeneral:React.FC<Props> = ({movie}): React.ReactElement => {
             setLiked(!liked);
           }}
         >
-          {liked ? <HeartIcon /> : <HeartIcon className="text-red-500" />}
+          {liked ? <HeartIcon /> : <p>err</p> }
         </div>
       </div>
     </div>
