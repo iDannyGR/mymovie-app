@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Results } from '@/models/Results';
 import { URLIMG } from '@/models/UrlMovie';
-import HeartIcon  from '@heroicons/react/20/solid/HeartIcon';
+import {HeartIcon}  from '@heroicons/react/24/solid';
 
 
 
@@ -26,18 +26,16 @@ const MovieGeneral:React.FC<Props> = ({movie}): React.ReactElement => {
       <div className=" text-white w-full">
         <h5 className="absolute font-bold text-3xl text-center top-4 left-3">{movie.title}</h5>
         <p className="hidden mt-4 text-justify">{movie.overview}</p>
-        <div className="absolute flex justify-center items-center rounded-full w-16 h-16 right-1 bottom-1 border-b-4">
-          <p className="rounded-full flex justify-center items-center  bg-white w-12 h-12 text-black font-extrabold">
+          <p className="absolute flex justify-center items-center rounded-2xl  bg-white w-10 h-10 right-2 bottom-3 text-black font-extrabold shadow inset">
             <span>{movie.vote_average.toFixed(1)}</span>
           </p>
-        </div>
         <div
-          className="absolute right-4 bottom-16 drop-shadow-2xl shadow-red-600"
+          className="absolute right-4 bottom-16"
           onClick={() => {
             setLiked(!liked);
           }}
         >
-          {liked ? <HeartIcon /> : <p>err</p> }
+          <HeartIcon className={`${liked ? 'text-white' : 'text-black'}`} />
         </div>
       </div>
     </div>
