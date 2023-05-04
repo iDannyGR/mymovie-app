@@ -2,7 +2,7 @@ import React from 'react';
 import { generalMovie } from '@/api/getMovie';
 import { Results } from '@/models/Results';
 
-export const useGetMovie = (id:string) =>{
+export const useGetMovie = (id:number) =>{
 
 const [movie, setMovie] = React.useState<Results>({
   adult: false,
@@ -38,7 +38,7 @@ React.useEffect(() => {
     status === 200 ? setMovie(data) : console.log('error');
   };
   data();
-}, [movie]);
+}, []);
 
 return { movie };
 }

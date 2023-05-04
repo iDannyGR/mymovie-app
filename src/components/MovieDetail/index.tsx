@@ -4,14 +4,17 @@ import { useGetMovie } from './hook/useGetMovie';
 import GoBack from '../GoBack';
 import { CalendarIcon } from '@heroicons/react/20/solid'; 
 import { ClockIcon } from '@heroicons/react/20/solid'; 
+import { Results } from '@/models/Results'; 
+import Actors from '../Actors';
 
 interface id {
-  id:string
+  id:Results['id']
 }
 
 const MovieDetail:React.FC<id> = ({id}):React.ReactElement => {
   
   const { movie } = useGetMovie(id);
+  console.log(movie.id);
   return (
     <div className="relative w-full h-[100vh] overflow-x-hidden">
       <GoBack />
@@ -37,8 +40,9 @@ const MovieDetail:React.FC<id> = ({id}):React.ReactElement => {
         </div>
         <p className="text-justify text-gray-500 mt-6">{movie.overview}</p>
       </div>
+      <Actors id={movie.id}/>
     </div>
   );
-}
+};
 
 export default MovieDetail;
