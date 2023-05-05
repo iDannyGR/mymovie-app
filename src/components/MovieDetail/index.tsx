@@ -14,7 +14,7 @@ interface id {
 const MovieDetail:React.FC<id> = ({id}):React.ReactElement => {
   
   const { movie } = useGetMovie(id);
-  console.log(movie.id);
+  
   return (
     <div className="relative w-full h-[100vh] overflow-x-hidden">
       <GoBack />

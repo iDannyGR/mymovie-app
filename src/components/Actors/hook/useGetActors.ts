@@ -16,7 +16,7 @@ export const useGetActors = (id: number) => {
       status === 200 ? setCredits(data) : console.log('error');
     };
     data();
-  }, []);
+  }, [id]);
 
   return { credits };
 };
