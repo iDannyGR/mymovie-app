@@ -6,8 +6,8 @@ export const useGetActors = (id: number) => {
   
   const [credits, setCredits] = React.useState<Credits>({
     cast:[],
-    crew:[] ,
-    id:0
+    crew:[],
+    id
   });
 
   React.useEffect(() => {

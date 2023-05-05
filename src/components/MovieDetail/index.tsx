@@ -16,7 +16,7 @@ const MovieDetail:React.FC<id> = ({id}):React.ReactElement => {
   const { movie } = useGetMovie(id);
   
   return (
-    <div className="relative w-full h-[100vh] overflow-x-hidden">
+    <div className="w-full h-[100vh] overflow-x-hidden">
       <GoBack />
       <p className="z-20 absolute w-36 h-7 top-6 -right-8 bg-white text-lg font-extrabold text-center rotate-45 shadow-inner shadow-black">
         {movie.vote_average.toFixed(1)}
@@ -24,9 +24,9 @@ const MovieDetail:React.FC<id> = ({id}):React.ReactElement => {
       <img
         src={`${URLIMG.URLXL}${movie.backdrop_path}`}
         alt=""
-        className="-z-10 w-full h-[450px] object-cover shadow-xl"
+        className="w-full h-[350px] object-cover shadow-xl"
       />
-      <div className="absolute z-20 -mt-10 rounded-t-3xl bg-white p-4">
+      <div className="absolute -mt-10 rounded-t-3xl bg-white p-4">
         <h3 className="font-semibold text-2xl text-center">{movie.title}</h3>
         <div className="flex items-center mt-3">
           <CalendarIcon className=" text-lime-500 h-6 w-6 mr-3" />
