@@ -6,7 +6,7 @@ interface State{
     token: string,
     email:string,
     itAuth: boolean,
-    favoriteMovies?: Results[]
+    favoriteMovies: Results[]
 }
 
 interface Actions {
@@ -25,8 +25,12 @@ export const authStore = create(
       favoriteMovies: [],
       setToken: (token, email) => set({ token, email, itAuth: true }),
       deleteToken: () => set({ token: '' }),
-      setFavoriteMovies: movie => set(state =>({ favoriteMovies: [movie, ...state.favoriteMovies] })) ,
-      deleteFavoriteMovie: id => set(state =>({ favoriteMovies : state.favoriteMovies.filter(movie => movie.id !== id) })),
+      setFavoriteMovies: movie => set( state =>({
+        favoriteMovies: [...state.favoriteMovies, movie]
+      })) ,
+      deleteFavoriteMovie: id => set(state =>({ 
+        favoriteMovies : state.favoriteMovies.filter(movie => movie.id !== id) 
+      })),
     }),
     { name: 'token' }
   )
